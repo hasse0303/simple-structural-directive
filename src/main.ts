@@ -13,11 +13,17 @@ import { SharedDirectiveModule } from './directives/shared-directive/shared-dire
     <a *appHideLink="shouldHideLink" target="_blank" href="https://angular.io/start">
       Learn more about Angular 
     </a>
+
+    <button (click)="toggleHideLink()">{{shouldHideLink ? 'Show' : 'Hide'}}</button>
   `,
 })
 export class App {
   name = 'Angular';
   shouldHideLink = true;
+
+  toggleHideLink() {
+    this.shouldHideLink = !this.shouldHideLink;
+  }
 }
 
 bootstrapApplication(App);
