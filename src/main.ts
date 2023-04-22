@@ -10,13 +10,14 @@ import { SharedDirectiveModule } from './directives/shared-directive/shared-dire
   imports: [CommonModule, SharedDirectiveModule],
   template: `
     <h1>Hello from {{name}}!</h1>
-    <a *appHideLink="false" target="_blank" href="https://angular.io/start">
+    <a *appHideLink="shouldHideLink" target="_blank" href="https://angular.io/start">
       Learn more about Angular 
     </a>
   `,
 })
 export class App {
   name = 'Angular';
+  shouldHideLink = true;
 }
 
 bootstrapApplication(App);
